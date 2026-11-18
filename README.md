@@ -105,6 +105,8 @@ TOP_K=4
 ```powershell
 python ingest.py
 ```
+<img width="886" height="45" alt="image" src="https://github.com/user-attachments/assets/d2dc4d78-fdb8-4747-afd4-14708b526ec9" />
+
 
 El script lee `data/*.md` y `data/*.txt`, obtiene los fragmentos, genera embeddings y guarda la colección en `./vectorstore/`. Genera una firma SHA-256 sobre los contenidos, el modelo y el chunking. Si corrés `python ingest.py` de nuevo sin cambios, **reutiliza la colección** en lugar de recalcular embeddings.
 
