@@ -194,6 +194,8 @@ El retriever utiliza `store.asimilarity_search(...)` para no bloquear el event l
 ```powershell
 python -m pytest -v
 ```
+<img width="886" height="203" alt="image" src="https://github.com/user-attachments/assets/712256cd-98af-4e93-8e47-fcf3f50ec13f" />
+
 
 Las pruebas incluidas se enfocan en Pydantic, referencias y armado del contexto **sin llamar a las APIs**. También hay dos pruebas manuales con la API real desde `main.py`, cuya salida deberás verificar en tu equipo. No declares las pruebas reales como aprobadas hasta ejecutarlas.
 
