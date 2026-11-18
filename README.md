@@ -58,11 +58,33 @@ El directorio **`vectorstore/`** y el manifiesto `.vectorstore_manifest.json` se
 
 ```powershell
 py -3.12 -m venv .venv
+```
+<img width="886" height="31" alt="image" src="https://github.com/user-attachments/assets/674719e4-2d90-486e-9750-1b43acaed7f5" />
+
+
+```powershell
 .\.venv\Scripts\Activate.ps1
+```
+<img width="886" height="31" alt="image" src="https://github.com/user-attachments/assets/571b7a2f-594c-4b19-a80b-0c3f7fc0ddeb" />
+
+
+```powershell
 python -m pip install -r requirements.txt
+```
+<img width="886" height="70" alt="image" src="https://github.com/user-attachments/assets/4616d836-5d47-4f90-8c71-919f4d2ffcf0" />
+
+
+```powershell
 python --version
+```
+<img width="722" height="32" alt="image" src="https://github.com/user-attachments/assets/2ab38c91-ce48-4b05-8965-922f07d54b4b" />
+
+
+```powershell
 Copy-Item .env.example .env
 ```
+<img width="886" height="29" alt="image" src="https://github.com/user-attachments/assets/19baec95-c670-47fb-8182-624a90bd79a2" />
+
 
 Completá `.env` con tus propias claves privadas:
 
