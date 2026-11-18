@@ -142,7 +142,7 @@ Consultar libremente:
 ```powershell
 python main.py --provider openai --question "¿Dónde se guardan las API keys?"
 ```
-<img width="784" height="130" alt="image" src="https://github.com/user-attachments/assets/d5a266f1-df11-4844-b58c-5217e3ecbd1e" />
+<img width="886" height="135" alt="image" src="https://github.com/user-attachments/assets/cad83975-8f07-4800-98dd-bb7ed4e3c869" />
 
 
 La función reutilizable es:
