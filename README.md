@@ -125,12 +125,17 @@ Ejecutar dos preguntas con OpenAI:
 ```powershell
 python main.py --provider openai
 ```
+<img width="886" height="291" alt="image" src="https://github.com/user-attachments/assets/12be1436-1f57-48a6-8413-940dcb96df45" />
+
+
 
 Probar Anthropic (sigue usando OpenAI para embeddings):
 
 ```powershell
 python main.py --provider anthropic
 ```
+<img width="886" height="296" alt="image" src="https://github.com/user-attachments/assets/200a010b-cd7c-4208-8290-8ff85dae7e55" />
+
 
 Consultar libremente:
 
