@@ -90,15 +90,15 @@ Completá `.env` con tus propias claves privadas:
 
 ```dotenv
 LLM_PROVIDER=openai
-OPENAI_API_KEY=TU_CLAVE_DE_OPENAI
-ANTHROPIC_API_KEY=TU_CLAVE_DE_ANTHROPIC
+OPENAI_API_KEY=_CLAVE_DE_OPENAI
+ANTHROPIC_API_KEY=_CLAVE_DE_ANTHROPIC
 OPENAI_MODEL=gpt-4o-mini
 ANTHROPIC_MODEL=claude-haiku-4-5
 EMBEDDING_MODEL=text-embedding-3-small
 TOP_K=4
 ```
 
-**Nunca subas `.env` a GitHub.** Aunque generes con Anthropic, necesitás `OPENAI_API_KEY` porque la base vectorial usa embeddings de OpenAI. Las solicitudes a APIs pueden tener costo.
+**Nunca subir `.env` a GitHub.** Aunque se genere con Anthropic, se necesita `OPENAI_API_KEY` porque la base vectorial usa embeddings de OpenAI. Las solicitudes a APIs pueden tener costo.
 
 ## 1. Ingesta y persistencia
 
