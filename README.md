@@ -116,7 +116,7 @@ Para reconstruirla explícitamente:
 python ingest.py --force
 ```
 
-Si cambiás cualquier documento o el modelo de embeddings, `ingest.py` reconstruye el índice completo. **No hace falta llamar manualmente a `.persist()`** con la integración Chroma actual cuando se configura `persist_directory`.
+Si se cambiá cualquier documento o el modelo de embeddings, `ingest.py` reconstruir el índice completo. **No hace falta llamar manualmente a `.persist()`** con la integración Chroma actual cuando se configura `persist_directory`.
 
 ## 2. Consultas RAG asíncronas
 
