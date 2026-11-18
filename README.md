@@ -4,20 +4,36 @@ Sistema **Python 3.12** para consultar cuatro documentos técnicos de ejemplo. I
 
 ## Componentes y arquitectura
 
-```text
-data/*.md → ingest.py → RecursiveCharacterTextSplitter (600 tokens, 50 overlap)
-                        ↓ embeddings: text-embedding-3-small (OpenAI)
-                 ./vectorstore/ (ChromaDB persistente)
-                        ↑ pregunta convertida con el MISMO modelo de embeddings
-query → recuperador asíncrono (top_k=4) → contexto [FUENTE: archivo]
-      → ChatPromptTemplate | ChatOpenAI/ChatAnthropic | PydanticOutputParser
-      → RAGResponse(respuesta, referencias)
-      → chequeo de referencias contra documentos recuperados
-```
+El flujo del sistema RAG se compone de las siguientes etapas:
 
-**Aclaración del chunking:** `chunk_size=600` representa el **máximo de tokens por fragmento**, no un mínimo rígido. Los fragmentos finales pueden ser menores de 500 tokens, algo normal en un corpus pequeño. El overlap configurado es de **50 tokens**. Se cuenta con `tiktoken`, no con caracteres.
+1. **Ingesta de documentos**
+   - Se leen los archivos `data/*.md`.
+   - Se fragmentan con `RecursiveCharacterTextSplitter`.
+   - Configuración de fragmentación: **600 tokens** con **50 tokens de overlap**.
 
-**Modelos de generación vs. embeddings:** el proveedor de **generación** puede ser OpenAI o Anthropic. Los **embeddings** usan siempre OpenAI (`text-embedding-3-small`) para indexar y consultar, evitando el error de modelos incompatibles. Si cambiás `EMBEDDING_MODEL`, debés volver a indexar.
+2. **Generación de embeddings**
+   - Cada fragmento se transforma en embedding usando **`text-embedding-3-small` (OpenAI)**.
+
+3. **Persistencia vectorial**
+   - Los embeddings y metadatos se almacenan en **ChromaDB** dentro de `./vectorstore`.
+
+4. **Recuperación semántica**
+   - La consulta del usuario se convierte en embedding usando el **mismo modelo**.
+   - Se realiza una búsqueda de similitud en ChromaDB.
+   - Se recuperan los **4 fragmentos más relevantes** (`top_k=4`).
+
+5. **Construcción del contexto**
+   - Los fragmentos recuperados se formatean junto con su fuente (`FUENTE: archivo`).
+
+6. **Generación de respuesta**
+   - El contexto y la pregunta se envían a una cadena LCEL compuesta por:
+     - `ChatPromptTemplate`
+     - `ChatOpenAI` o `ChatAnthropic`
+     - `PydanticOutputParser`
+
+7. **Validación final**
+   - La salida se valida contra el modelo `RAGResponse`.
+   - Se verifica que las referencias citadas pertenezcan a los documentos recuperados.
 
 ## Estructura del repositorio
 
