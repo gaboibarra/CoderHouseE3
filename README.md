@@ -77,8 +77,7 @@ python -m pip install -r requirements.txt
 ```powershell
 python --version
 ```
-<img width="723" height="29" alt="image" src="https://github.com/user-attachments/assets/ff1660c3-ef05-40a4-9897-61ed72cca529" />
-
+<img width="886" height="37" alt="image" src="https://github.com/user-attachments/assets/1ff0465f-46b1-4447-978a-cbeae13882ef" />
 
 
 ```powershell
