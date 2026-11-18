@@ -164,23 +164,15 @@ El retriever utiliza `store.asimilarity_search(...)` para no bloquear el event l
 
 **Pregunta respondible:** «¿Qué mecanismos se usan para proteger las credenciales de las APIs?»
 
-```json
-{
-  "respuesta": "Las credenciales se guardan en variables de entorno. En desarrollo se permite .env, excluido por .gitignore; el repositorio comparte solo .env.example sin secretos.",
-  "referencias": ["02_seguridad.md"]
-}
-```
+<img width="886" height="176" alt="image" src="https://github.com/user-attachments/assets/0840ae17-40ed-4d82-856f-0428ab7218a1" />
+
 
 **Pregunta trampa:** «¿Cuál es el sueldo del director general de esta empresa?»
 
-```json
-{
-  "respuesta": "No lo sé",
-  "referencias": []
-}
-```
+<img width="886" height="121" alt="image" src="https://github.com/user-attachments/assets/31a01f07-39f2-4ac4-a599-28a311114033" />
 
-**Son resultados ilustrativos, no una ejecución verificada.** La redacción puede variar entre consultas. Para la trampa, el resultado deseado es exactamente «No lo sé» porque la información no está en el corpus.
+
+Para la trampa, el resultado deseado es exactamente «No lo sé» porque la información no está en el corpus.
 
 ### Limitaciones importantes
 
